@@ -8,32 +8,24 @@ EPOCH_KEYSTORE=$(date -d "${EXP_KEYSTORE}" +"%s")
 EPOCH_URL=$(date -d "${EXP_URL}" +"%s")
 EPOCH_HUMAN_KEYSTORE=$(date -d @$EPOCH_KEYSTORE +%Y-%m-%d' '%H:%M:%S)
 EPOCH_HUMAN_URL=$(date -d @$EPOCH_URL +%Y-%m-%d' '%H:%M:%S)
-
 }
 
-
 comp_epoch() {
-
 if [ ${EPOCH_KEYSTORE} -eq ${EPOCH_URL} ] ; then
         echo  "certificate validation [Keystore vs URL]\nRESULT=0\nKEYSTORE_EPOCH=${EPOCH_KEYSTORE}\nURL_EPOCH= ${EPOCH_URL}\nVENCIMIENTO_URL=${EPOCH_HUMAN_URL}\nVENCIMIENTO_KEYSTORE=${EPOCH_HUMAN_KEYSTORE}"
         exit 0
         
         else
         echo "certificate validation [Keystore vs URL]\nRESULT=1\nKEYSTORE_EPOCH=${EPOCH_KEYSTORE}\nURL_EPOCH= ${EPOCH_URL}\nVENCIMIENTO_URL=${EPOCH_HUMAN_URL}\nVENCIMIENTO_KEYSTORE=${EPOCH_HUMAN_KEYSTORE}"
-
         exit 1
-
 fi
 }
-
 
 usage() {
 
         echo "Usage: vcert2.sh [ALIASKEY] [URL]"
         echo  "ejemplo: vcert2.sh googleAccounts https://accounts.google.com"
-
 }
-
 
 main() {
 ###### path of the keystore file
@@ -43,19 +35,12 @@ local ALIASKEY=$1
 local REMOTEKEY=$2
 
         if [ -z "${ALIASKEY}" ] ; then
-
         usage && exit 1
         elif [ -z "${REMOTEKEY}" ] ; then
-
         usage && exit 1
-
         fi
-
 
 get_epoch
 comp_epoch
-
 }
-
-
 main $@
