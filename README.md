@@ -4,6 +4,7 @@ script to compare the expiration of a certificate hosted in a keystore vs that o
 ### Requirements
 
 * Keytool https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/keytool.html
+* Curl
 * alias to identify the installed certificate
   
   example: keytool -list -v -keystore /home/pruebas/certificates/cacerts.jks -storepass changeit| grep Alias
