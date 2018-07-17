@@ -14,12 +14,12 @@ EPOCH_HUMAN_URL=$(date -d @$EPOCH_URL +%Y-%m-%d' '%H:%M:%S)
 
 comp_epoch() {
 
-if [ ${EPOCH_KEYSTORE} == ${EPOCH_URL} ] ; then
-        echo  "certificate validation [Keystore vs URL]\nRESULT=0\nKEYSTORE EPOCH=${EPOCH_KEYSTORE}\nURL EPOCH= ${EPOCH_URL}\nVENCIMIENTO_URL=${EPOCH_HUMAN_URL}\nVENCIMIENTO_KEYSTORE=${EPOCH_HUMAN_KEYSTORE}"
+if [ ${EPOCH_KEYSTORE} -eq ${EPOCH_URL} ] ; then
+        echo  "certificate validation [Keystore vs URL]\nRESULT=0\nKEYSTORE_EPOCH=${EPOCH_KEYSTORE}\nURL_EPOCH= ${EPOCH_URL}\nVENCIMIENTO_URL=${EPOCH_HUMAN_URL}\nVENCIMIENTO_KEYSTORE=${EPOCH_HUMAN_KEYSTORE}"
         exit 0
         
         else
-        echo "certificate validation [Keystore vs URL]\nRESULT=1\nKEYSTORE EPOCH=${EPOCH_KEYSTORE}\nURL EPOCH= ${EPOCH_URL}\nVENCIMIENTO_URL=${EPOCH_HUMAN_URL}\nVENCIMIENTO_KEYSTORE=${EPOCH_HUMAN_KEYSTORE}"
+        echo "certificate validation [Keystore vs URL]\nRESULT=1\nKEYSTORE_EPOCH=${EPOCH_KEYSTORE}\nURL_EPOCH= ${EPOCH_URL}\nVENCIMIENTO_URL=${EPOCH_HUMAN_URL}\nVENCIMIENTO_KEYSTORE=${EPOCH_HUMAN_KEYSTORE}"
 
         exit 1
 
