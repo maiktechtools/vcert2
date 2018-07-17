@@ -15,11 +15,11 @@ EPOCH_HUMAN_URL=$(date -d @$EPOCH_URL +%Y-%m-%d' '%H:%M:%S)
 comp_epoch() {
 
 if [ ${EPOCH_KEYSTORE} == ${EPOCH_URL} ] ; then
-        echo -e "certificate validation [Keystore vs URL]\nRESULT=0\nKEYSTORE EPOCH=${EPOCH_KEYSTORE}\nURL EPOCH= ${EPOCH_URL}\nVENCIMIENTO_URL=${EPOCH_HUMAN_URL}\nVENCIMIENTO_KEYSTORE=${EPOCH_HUMAN_KEYSTORE}"
+        echo  "certificate validation [Keystore vs URL]\nRESULT=0\nKEYSTORE EPOCH=${EPOCH_KEYSTORE}\nURL EPOCH= ${EPOCH_URL}\nVENCIMIENTO_URL=${EPOCH_HUMAN_URL}\nVENCIMIENTO_KEYSTORE=${EPOCH_HUMAN_KEYSTORE}"
         exit 0
         
         else
-        echo -e "certificate validation [Keystore vs URL]\nRESULT=1\nKEYSTORE EPOCH=${EPOCH_KEYSTORE}\nURL EPOCH= ${EPOCH_URL}\nVENCIMIENTO_URL=${EPOCH_HUMAN_URL}\nVENCIMIENTO_KEYSTORE=${EPOCH_HUMAN_KEYSTORE}"
+        echo "certificate validation [Keystore vs URL]\nRESULT=1\nKEYSTORE EPOCH=${EPOCH_KEYSTORE}\nURL EPOCH= ${EPOCH_URL}\nVENCIMIENTO_URL=${EPOCH_HUMAN_URL}\nVENCIMIENTO_KEYSTORE=${EPOCH_HUMAN_KEYSTORE}"
 
         exit 1
 
@@ -30,7 +30,7 @@ fi
 usage() {
 
         echo "Usage: vcert2.sh [ALIASKEY] [URL]"
-        echo -e "ejemplo: vcert2.sh googleAccounts https://accounts.google.com"
+        echo  "ejemplo: vcert2.sh googleAccounts https://accounts.google.com"
 
 }
 
