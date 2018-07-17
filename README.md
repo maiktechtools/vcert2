@@ -29,11 +29,21 @@ vcert2.sh googleAccounts https://accounts.google.com
       
       #sh  vcert2.sh googleAccounts https://accounts.google.com
       certificate validation [Keystore vs URL]
-      RESULT=0
+      *RESULT=0*
       KEYSTORE EPOCH=1535455860 
       URL_EPOCH= 1535455860
       VENCIMIENTO_URL=2018-08-28 06:31:00
       VENCIMIENTO_KEYSTORE=2018-08-28 06:31:00
+      
+      
+      sh  vcert2.sh googleAccounts https://console.firebaseio.com
+      certificate validation [Keystore vs URL]
+      *RESULT=1*
+      KEYSTORE EPOCH=1535455860
+      URL EPOCH= 1533254400
+      VENCIMIENTO_URL=2018-08-02 19:00:00
+      VENCIMIENTO_KEYSTORE=2018-08-28 06:31:00
+
 
 
 
